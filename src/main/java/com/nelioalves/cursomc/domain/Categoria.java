@@ -1,5 +1,7 @@
 package com.nelioalves.cursomc.domain;
 
+import com.nelioalves.cursomc.dto.CategoriaDTO;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -81,5 +83,7 @@ public class Categoria implements Serializable{
 		return true;
 	}
 	
-	
+	public static Categoria from(CategoriaDTO dto){
+		return new Categoria(dto.getId(), dto.getNome());
+	}
 }

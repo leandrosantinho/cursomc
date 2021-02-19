@@ -3,6 +3,7 @@ package com.nelioalves.cursomc.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.nelioalves.cursomc.dto.CategoriaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -55,5 +56,9 @@ public class CategoriaService {
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 		
 		return repo.findAll(pageRequest);
+	}
+
+	public Categoria fromDTO(CategoriaDTO dto){
+		return new Categoria(dto.getId(), dto.getNome());
 	}
 }

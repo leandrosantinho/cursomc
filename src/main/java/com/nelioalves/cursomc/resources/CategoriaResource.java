@@ -19,6 +19,8 @@ import com.nelioalves.cursomc.domain.Categoria;
 import com.nelioalves.cursomc.dto.CategoriaDTO;
 import com.nelioalves.cursomc.services.CategoriaService;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/categorias")
 public class CategoriaResource {
@@ -33,18 +35,18 @@ public class CategoriaResource {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> insert(@RequestBody Categoria categoria){
-		categoria = service.insert(categoria);
+	public ResponseEntity<Void> insert(@RequestBody @Valid CategoriaDTO categoriaDTO){
+		Categoria c = service.insert(Categoria.from(categoriaDTO));
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}").buildAndExpand(categoria.getId()).toUri();
+				.path("/{id}").buildAndExpand(c.getId()).toUri();
 		
 		return ResponseEntity.created(uri).build();
 	}
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody Categoria categoria){
-		categoria.setId(id);
-		categoria = service.update(categoria);
+	public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody @Valid CategoriaDTO categoriaDTO){
+		categoriaDTO.setId(id);
+		Categoria categoria = service.update(Categoria.from(categoriaDTO));
 		
 		return ResponseEntity.noContent().build();
 	}
