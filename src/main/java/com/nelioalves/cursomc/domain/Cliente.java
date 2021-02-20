@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.nelioalves.cursomc.domain.enums.TipoCliente;
+import com.nelioalves.cursomc.dto.ClienteDTO;
 
 @Entity
 public class Cliente implements Serializable{
@@ -41,6 +42,14 @@ public class Cliente implements Serializable{
 	private List<Pedido> pedidos = new ArrayList<>();;
 	
 	public Cliente() {
+	}
+
+	public static Cliente from (ClienteDTO clienteDTO){
+		Cliente c = new Cliente();
+		c.setId(clienteDTO.getId());
+		c.setNome(clienteDTO.getNome());
+		c.setEmail(clienteDTO.getEmail());
+		return c;
 	}
 
 	public Integer getId() {
@@ -113,7 +122,7 @@ public class Cliente implements Serializable{
 		this.nome = nome;
 		this.email = email;
 		this.cpfOuCnpj = cpfOuCnpj;
-		this.tipo = tipo.getCod();
+		this.tipo = tipo==null?null:tipo.getCod();
 	}
 
 
