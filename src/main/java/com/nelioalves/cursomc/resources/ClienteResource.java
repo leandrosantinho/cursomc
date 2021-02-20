@@ -6,6 +6,9 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import com.nelioalves.cursomc.domain.Categoria;
+import com.nelioalves.cursomc.dto.CategoriaDTO;
+import com.nelioalves.cursomc.dto.ClienteNewDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -63,6 +66,15 @@ public class ClienteResource {
 			@RequestParam(value="direction", defaultValue="ASC") String direction) {
 		Page<Cliente> list = service.findPage(page, linesPerPage, orderBy, direction);
 		return ResponseEntity.ok().body(list.map(c->new ClienteDTO(c)));
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<Void> insert(@RequestBody @Valid ClienteNewDTO clienteNewDTO){
+		Cliente c = service.insert(Cliente.from(clienteNewDTO));
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+				.path("/{id}").buildAndExpand(c.getId()).toUri();
+
+		return ResponseEntity.created(uri).build();
 	}
 	
 }
