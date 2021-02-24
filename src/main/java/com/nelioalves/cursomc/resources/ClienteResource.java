@@ -6,9 +6,6 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import com.nelioalves.cursomc.domain.Categoria;
-import com.nelioalves.cursomc.dto.CategoriaDTO;
-import com.nelioalves.cursomc.dto.ClienteNewDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.nelioalves.cursomc.domain.Cliente;
-import com.nelioalves.cursomc.domain.Cliente;
 import com.nelioalves.cursomc.dto.ClienteDTO;
+import com.nelioalves.cursomc.dto.ClienteNewDTO;
 import com.nelioalves.cursomc.services.ClienteService;
 
 @RestController
