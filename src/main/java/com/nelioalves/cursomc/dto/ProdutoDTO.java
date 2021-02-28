@@ -1,10 +1,7 @@
 package com.nelioalves.cursomc.dto;
 
-import com.nelioalves.cursomc.domain.Categoria;
 import com.nelioalves.cursomc.domain.Produto;
-import org.hibernate.validator.constraints.Length;
 
-import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 public class ProdutoDTO implements Serializable{

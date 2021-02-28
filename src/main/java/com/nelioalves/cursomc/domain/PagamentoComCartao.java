@@ -1,12 +1,13 @@
 package com.nelioalves.cursomc.domain;
 
-import java.io.Serializable;
-
-import javax.persistence.Entity;
-
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
 
+import javax.persistence.Entity;
+import java.io.Serializable;
+
 @Entity
+@JsonTypeName("pagamentoComCartao")
 public class PagamentoComCartao extends Pagamento implements Serializable {
 	
 	/**

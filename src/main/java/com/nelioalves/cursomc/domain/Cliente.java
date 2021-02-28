@@ -1,17 +1,16 @@
 package com.nelioalves.cursomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.nelioalves.cursomc.domain.enums.TipoCliente;
+import com.nelioalves.cursomc.dto.ClienteDTO;
+import com.nelioalves.cursomc.dto.ClienteNewDTO;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.nelioalves.cursomc.domain.enums.TipoCliente;
-import com.nelioalves.cursomc.dto.ClienteDTO;
-import com.nelioalves.cursomc.dto.ClienteNewDTO;
 
 @Entity
 public class Cliente implements Serializable{

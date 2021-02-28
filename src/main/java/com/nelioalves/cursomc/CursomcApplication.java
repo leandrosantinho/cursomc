@@ -1,19 +1,16 @@
 package com.nelioalves.cursomc;
 
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-
 import com.nelioalves.cursomc.domain.*;
+import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
+import com.nelioalves.cursomc.domain.enums.TipoCliente;
 import com.nelioalves.cursomc.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.nelioalves.cursomc.domain.Produto;
-import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
-import com.nelioalves.cursomc.domain.enums.TipoCliente;
-import com.nelioalves.cursomc.repositories.ProdutoRepository;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner{

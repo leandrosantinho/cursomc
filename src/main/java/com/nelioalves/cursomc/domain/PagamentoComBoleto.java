@@ -1,14 +1,15 @@
 package com.nelioalves.cursomc.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
+
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
-
 @Entity
+@JsonTypeName("pagamentoComBoleto")
 public class PagamentoComBoleto extends Pagamento implements Serializable {
 	
 	/**

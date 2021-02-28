@@ -1,14 +1,12 @@
 package com.nelioalves.cursomc.dto;
 
-import java.io.Serializable;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-
-import com.nelioalves.cursomc.domain.Categoria;
 import com.nelioalves.cursomc.domain.Cliente;
 import com.nelioalves.cursomc.services.validation.ClienteUpdate;
 import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 
 @ClienteUpdate
 public class ClienteDTO implements Serializable{

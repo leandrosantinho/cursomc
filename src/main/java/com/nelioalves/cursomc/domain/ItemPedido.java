@@ -1,11 +1,10 @@
 package com.nelioalves.cursomc.domain;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
 
 @Entity
 public class ItemPedido implements Serializable{
@@ -75,6 +74,15 @@ public class ItemPedido implements Serializable{
 	public double getSubTotal(){
 		return (preco - desconto) * quantidade;
 	}
+
+	public void setPedido(Pedido pedido){
+		id.setPedido(pedido);
+	}
+
+	public void setProduto(Produto produto){
+		id.setProduto(produto);
+	}
+
 
 	@Override
 	public int hashCode() {

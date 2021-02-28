@@ -8,10 +8,10 @@ import com.nelioalves.cursomc.resources.exception.FieldMessage;
 import com.nelioalves.cursomc.services.validation.utils.BR;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClientInsertValidator implements ConstraintValidator<ClienteInsert, ClienteNewDTO> {
 
