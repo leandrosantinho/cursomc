@@ -13,10 +13,10 @@ import com.nelioalves.cursomc.services.PedidoService;
 @RestController
 @RequestMapping(value = "/pedidos")
 public class PedidoResource {
-	
+
 	@Autowired
 	private PedidoService service;
-	
+
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Pedido> listar(@PathVariable Integer id) {
 		Pedido obj = service.find(id);
